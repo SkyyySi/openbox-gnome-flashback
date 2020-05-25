@@ -7,7 +7,7 @@ This has been tested working on GNOME version **3.36**.
 
 # Installation
 
-For Arch users see the [AUR package](https://aur.archlinux.org/packages/openbox-gnome-flashback/) for a more easy intallation.
+For Arch users see the [AUR package](https://aur.archlinux.org/packages/openbox-gnome-flashback-git/) for a more easy intallation.
 
 For Ubuntu (19.10), ensure prerequisites are installed:
 ```
