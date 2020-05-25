@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=openbox-gnome-flashback
+Comment=Openbox window manager
+Exec=openbox-gnome-flashback
+NoDisplay=true
+X-GNOME-WMName=i3-gnome-flashback
+X-GNOME-Autostart-Phase=WindowManager
+X-GNOME-Provides=windowmanager
+X-GNOME-Autostart-Notify=false

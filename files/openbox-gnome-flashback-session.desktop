@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=GNOME Flashback (Openbox)
+Comment=This session logs you into GNOME Flashback with Openbox
+Exec=openbox-gnome-flashback-session
+TryExec=openbox
+Type=Application
+DesktopNames=GNOME-Flashback;GNOME;
