@@ -5,7 +5,19 @@ if [ -n "$DESKTOP_AUTOSTART_ID" ]; then
 	dbus-send --print-reply --session --dest=org.gnome.SessionManager "/org/gnome/SessionManager" org.gnome.SessionManager.RegisterClient "string:openbox-gnome" "string:$DESKTOP_AUTOSTART_ID"
 fi
 
-openbox
+# Clean up after GDM
+xprop -root -remove _NET_NUMBER_OF_DESKTOPS \
+      -remove _NET_DESKTOP_NAMES \
+      -remove _NET_CURRENT_DESKTOP 2> /dev/null
+
+# Set up the environment
+A="/etc/xdg/openbox/environment"
+test -r $A && . $A
+A="${XDG_CONFIG_HOME:-"$HOME/.config"}/openbox/environment"
+test -r $A && . $A
+
+# Run Openbox, and have it run the autostart stuff
+exec /usr/bin/openbox --startup "/usr/lib/openbox/openbox-autostart OPENBOX" "$@"
 
 # Close session when Openbox exits.
 if [ -n "$DESKTOP_AUTOSTART_ID" ]; then
